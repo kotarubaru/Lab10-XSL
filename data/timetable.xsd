@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Root element -->
+    <xs:element name="timetable">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="timeslots" type="Timeslots"/>
+                <xs:element name="days" type="Days"/>
+                <xs:element name="courses" type="Courses"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Attribute types -->
+    <xs:simpleType name="Activity">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Lab"/>
+            <xs:enumeration value="Lec"/>
+            <xs:enumeration value="Tut"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Room">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[NS][EW][0-9]+\-[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Time">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="1?[0-9]:[0-5][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DayID">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Mon"/>
+            <xs:enumeration value="Tue"/>
+            <xs:enumeration value="Wed"/>
+            <xs:enumeration value="Thu"/>
+            <xs:enumeration value="Fri"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CourseID">
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="4620"/>
+            <xs:enumeration value="4650"/>
+            <xs:enumeration value="4660"/>
+            <xs:enumeration value="4770"/>
+            <xs:enumeration value="4850"/>
+            <xs:enumeration value="4910"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- High-level Containers -->
+    <xs:complexType name="Timeslots">
+        <xs:sequence>
+            <xs:element name="timeslot" type="Timeslot" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Days">
+        <xs:sequence>
+            <xs:element name="day" type="Day" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Courses">
+        <xs:sequence>
+            <xs:element name="course" type="Course" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Booking Containers -->
+    <xs:complexType name="Timeslot">
+        <xs:sequence>
+            <xs:element name="booking" type="Booking" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="start-time" type="Time" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Day">
+        <xs:sequence>
+            <xs:element name="booking" type="Booking" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="day" type="DayID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Course">
+        <xs:sequence>
+            <xs:element name="booking" type="Booking" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="course" type="CourseID" use="required"/>
+    </xs:complexType>
+
+    <!-- Booking Element -->
+    <xs:complexType name="Booking">
+        <xs:attribute name="activity" type="Activity" use="required"/>
+        <xs:attribute name="instructor" type="xs:string" use="required"/>
+        <xs:attribute name="room" type="Room" use="required"/>
+        <xs:attribute name="end-time" type="Time" use="required"/>
+        <xs:attribute name="start-time" type="Time" use="optional"/>
+        <xs:attribute name="day" type="DayID" use="optional"/>
+        <xs:attribute name="course" type="CourseID" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>
+

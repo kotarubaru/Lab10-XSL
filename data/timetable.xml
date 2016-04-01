@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timetable xmlns:xsi="http://wwww.w3.org/2001/XMLSchema-instance">
+
+	<timeslots>
+		<timeslot start-time="8:30">
+			<booking day="Fri" end-time="10:20" course="4660" instructor="Steve" activity="Lec" room="SW9-206" />
+		</timeslot>
+		<timeslot start-time="9:30">
+			<booking day="Thu" end-time="10:20" course="4910" instructor="Richard" activity="Lec" room="SW5-1840" />
+		</timeslot>
+		<timeslot start-time="10:30">
+			<booking day="Tue" end-time="12:20" course="4620" instructor="Bethany" activity="Lab" room="SE12-306" />
+			<booking day="Wed" end-time="12:20" course="4660" instructor="Steve" activity="Lab" room="SE12-306" />
+			<booking day="Thu" end-time="12:20" course="4850" instructor="Jim" activity="Lab" room="SE12-320" />
+		</timeslot>
+		<timeslot start-time="12:30">
+			<booking day="Tue" end-time="1:20" course="4650" instructor="Medhat" activity="Lec" room="SW9-206" />
+			<booking day="Wed" end-time="2:20" course="4850" instructor="Jim" activity="Lec" room="SW3-1750" />
+		</timeslot>
+		<timeslot start-time="1:30">
+			<booking day="Mon" end-time="3:20" course="4770" instructor="Trevor" activity="Tut" room="SE12-306" />
+			<booking day="Tue" end-time="3:20" course="4650" instructor="Medhat" activity="Lab" room="SE12-306" />
+			<booking day="Thu" end-time="3:20" course="4910" instructor="Richard" activity="Lab" room="SE12-306" />
+		</timeslot>
+		<timeslot start-time="3:30">
+			<booking day="Mon" end-time="4:20" course="4910" instructor="Richard" activity="Lec" room="SW9-206" />
+			<booking day="Tue" end-time="5:20" course="4620" instructor="Bethany" activity="Lec" room="SW3-3615" />
+		</timeslot>
+		<timeslot start-time="4:30">
+			<booking day="Mon" end-time="5:20" course="4650" instructor="Medhat" activity="Lec" room="SE6-205" />
+		</timeslot>
+	</timeslots>
+
+	<days>
+		<day day="Mon">
+			<booking start-time="1:30" end-time="3:20" course="4770" instructor="Trevor" activity="Tut" room="SE12-306" />
+			<booking start-time="3:30" end-time="4:20" course="4910" instructor="Richard" activity="Lec" room="SW9-206" />
+			<booking start-time="4:30" end-time="5:20" course="4650" instructor="Medhat" activity="Lec" room="SE6-205" />
+		</day>
+		<day day="Tue">
+			<booking start-time="10:30" end-time="12:20" course="4620" instructor="Bethany" activity="Lab" room="SE12-306" />
+			<booking start-time="12:30" end-time="1:20" course="4650" instructor="Medhat" activity="Lec" room="SW9-206" />
+			<booking start-time="1:30" end-time="3:20" course="4650" instructor="Medhat" activity="Lab" room="SE12-306" />
+			<booking start-time="3:30" end-time="5:20" course="4620" instructor="Bethany" activity="Lec" room="SW3-3615" />
+		</day>
+		<day day="Wed">
+			<booking start-time="10:30" end-time="12:20" course="4660" instructor="Steve" activity="Lab" room="SE12-306" />
+			<booking start-time="12:30" end-time="2:20" course="4850" instructor="Jim" activity="Lec" room="SW3-1750" />
+		</day>
+		<day day="Thu">
+			<booking start-time="9:30" end-time="10:20" course="4910" instructor="Richard" activity="Lec" room="SW5-1840" />
+			<booking start-time="10:30" end-time="12:20" course="4850" instructor="Jim" activity="Lab" room="SE12-320" />
+			<booking start-time="1:30" end-time="3:20" course="4910" instructor="Richard" activity="Lab" room="SE12-306" />
+		</day>
+		<day day="Fri">
+			<booking start-time="8:30" end-time="10:20" course="4660" instructor="Steve" activity="Lec" room="SW9-206" />
+		</day>
+	</days>
+        
+	<courses>
+		<course course="4620">
+			<booking day="Tue" start-time="10:30" end-time="12:20" instructor="Bethany" activity="Lab" room="SE12-306" />
+                        <booking day="Tue" start-time="3:30" end-time="5:20" instructor="Bethany" activity="Lec" room="SW3-3615" />
+		</course>
+		<course course="4650">
+			<booking day="Mon" start-time="4:30" end-time="5:20" instructor="Medhat" activity="Lec" room="SE6-205" />
+                        <booking day="Tue" start-time="12:30" end-time="1:20" instructor="Medhat" activity="Lec" room="SW9-206" />
+                        <booking day="Tue" start-time="1:30" end-time="3:20" instructor="Medhat" activity="Lab" room="SE12-306" />
+		</course>
+		<course course="4660">
+			<booking day="Wed" start-time="10:30" end-time="12:20" instructor="Steve" activity="Lab" room="SE12-306" />
+			<booking day="Fri" start-time="8:30" end-time="10:20" instructor="Steve" activity="Lec" room="SW9-206" />
+		</course>
+                <course course="4770">
+                        <booking day="Mon" start-time="1:30" end-time="3:20" instructor="Trevor" activity="Tut" room="SE12-306" />
+                </course>
+                <course course="4850">
+                        <booking day="Wed" start-time="12:30" end-time="2:20" instructor="Jim" activity="Lec" room="SW3-1750" />
+                        <booking day="Thu" start-time="10:30" end-time="12:20" instructor="Jim" activity="Lab" room="SE12-320" />
+                </course>
+                <course course="4910">
+                        <booking day="Mon" start-time="3:30" end-time="4:20" instructor="Richard" activity="Lec" room="SW9-206" />
+                        <booking day="Thu" start-time="9:30" end-time="10:20" instructor="Richard" activity="Lec" room="SW5-1840" />
+                        <booking day="Thu" start-time="1:30" end-time="3:20" instructor="Richard" activity="Lab" room="SE12-306" />
+                </course>
+        </courses>
+</timetable>
